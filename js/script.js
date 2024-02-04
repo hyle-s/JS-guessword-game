@@ -20,14 +20,11 @@ const getWord = async function () {
   placeholder(word);
 };
 
-
 getWord();
 
-// Placeholder symbol for word's letters
 const placeholder = function (word) {
   const placeholderLetters = [];
   for (const letter of word) {
-    // console.log(letter);
     placeholderLetters.push("●");
   }
   wordInProgress.innerText = placeholderLetters.join("");
@@ -64,10 +61,7 @@ const makeGuess = function (guess) {
     message.innerText = "You already guessed that one! Try again!";
   } else {
     guessedLetters.push(guess);
-    console.log(guessedLetters);
-    // Call function to update remaining guesses
     updateGuessesRemaining(guess);
-    // Call function to make guesses appear on screen
     showGuessedLetters();
     updateWordInProgress(guessedLetters);
   }
@@ -94,7 +88,6 @@ const updateWordInProgress = function (guessedLetters) {
       revealWord.push("●");
     }
   }
-  // console.log(revealWord);
   wordInProgress.innerText = revealWord.join("");
   checkIfWin();
 };
